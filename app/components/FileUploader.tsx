@@ -33,7 +33,7 @@ const FileUploader = ({ onFileSelect } : FileUploaderProps) => {
                        <img src="/icons/info.svg" alt="upload" className="size-20"/>
                    </div>
                    {file ? (
-                       <div>
+                       <div className="uploader-selected-file" onClick={(e) => e.stopPropagation()} >
                        <div className="flex items-center space-x-3">
                            <img src="/images/pdf.png" alt="pdf" className="size-10" />
                            <div>
