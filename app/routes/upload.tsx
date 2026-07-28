@@ -51,6 +51,7 @@ const Upload = () => {
             uploadedfile.path,
            prepareInstructions({ jobTitle, jobDescription})
         )
+        console.log("Feedback:", feedback);
         if (!feedback) return  setStatusText('Error: Failed to analyze resume');
 
         const feedbackText= typeof feedback.message.content === 'string'
