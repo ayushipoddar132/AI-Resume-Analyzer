@@ -15,6 +15,10 @@ const Resume = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
+        if (!isLoading && !auth.isAuthenticated) navigate(`/auth?next=/resume/${id}`);
+    }, [isLoading])
+
+    useEffect(() => {
         const loadResume = async () => {
             const resume = await kv.get(`resume:${id}`);
             if(!resume) return;
@@ -61,6 +65,16 @@ const Resume = () => {
                         </div>
                         )}
                 </section>
+            <section className="feedback-section">
+                <h2 className="text-4xl !text-black font-bold">Resume Review</h2>
+                {feedback ? (
+                    <div className="flex flex-col gap-8 animate-in fade-in duration-1000">
+                       summary ATS Details
+                    </div>
+                ) : (
+                    <img src="/images/resume-scan-2.gif" className="w-full" />
+                )}
+            </section>
             </div>
         </main>
     )
