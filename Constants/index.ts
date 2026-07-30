@@ -234,7 +234,9 @@ export const prepareInstructions = ({
 }) =>
     `You are an expert in ATS (Applicant Tracking System) and resume analysis.
   Please analyze and rate this resume and suggest how to improve it.
-  The rating can be low if the resume is bad.
+  Evaluate the resume fairly based on current ATS standards.
+  Only assign low scores when there are significant issues such as poor formatting, missing skills, or lack of relevant experience.
+  A well-structured resume with relevant skills and projects should generally receive an ATS score between 75 and 95.
   Be thorough and detailed. Don't be afraid to point out any mistakes or areas for improvement.
   If there is a lot to improve, don't hesitate to give low scores. This is to help the user to improve their resume.
   If available, use the job description for the job user is applying to to give more detailed feedback.
